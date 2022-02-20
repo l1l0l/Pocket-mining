@@ -1,10 +1,14 @@
 def relation(json_from, json_to):
-    if not isinstance(json_to, dict):
-            return 'attribute' +
+    if isinstance(json_to, list):
+        return 'ONE_TO_MANY'
+    elif not isinstance(json_to, dict):
+        return 'attribute'
     all_items_are_dict = True
     keys=[]; values=[]
     for k,v in json_to.items():
         keys.append(k); values.append(v)
+        #if isinstance(v, list):
+            #return 'ONE_TO_MANY'
         if not isinstance(v, dict):
             all_items_are_dict = False
             return 'ONE_TO_ONE'
