@@ -1,7 +1,7 @@
 from pocket_api import *
 import pudb
 
-pu.db
+#pu.db
 
 retrieve_json = retrieve(detailType='complete', sort='newest', search='sei', domain='')
 model(retrieve_json)
